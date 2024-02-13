@@ -13,6 +13,9 @@
             flex-direction: column;
             gap: 150px;
         }
+        @include mobile{
+            gap: 50px;
+        }
         display: grid;
         grid-template-columns: repeat(2,1fr);
         gap: 220px;
@@ -32,14 +35,26 @@
             align-items: center;
             font-weight: 900;
             font-size: 14px;
+            @include mobile{
+                width: 92px;
+                padding: 5px 6px;
+                font-size: 11px;
+            }
         }
         .list{
             margin-top: 40px;
             display: grid;
             grid-template-columns: repeat(3,1fr);
             gap: 30px;
+            @include mobile{
+                display: flex;
+                flex-direction: column;
+            }
             .item{
                 .sub-title{
+                    @include mobile{
+                        font-size: 12px;
+                    }
                     display: inline-block;
                     font-size: 16px;
                     font-weight: 600;
@@ -53,6 +68,9 @@
                     margin-bottom: 10px;
                     font-size: 17px;
                     font-weight: 600;
+                    @include mobile{
+                        font-size: 11px;
+                    }
                 }
             }
         }
@@ -84,9 +102,15 @@
                 font-size: 16px;
                 font-weight: 600;
                 margin-bottom: 10px;
+                @include mobile{
+                    font-size: 11px;
+                }
             }
         }
         .email{
+            @include mobile{
+                font-size: 11px;
+            }
             text-transform: uppercase;
             display: inline-block;
             color: $--light-blue;
@@ -94,6 +118,7 @@
             padding-bottom: 4px;
             font-size: 16px;
             font-weight: 600;}
+   
         .sns-list{
             margin-top: 50px;
             gap: 20px;
@@ -101,6 +126,9 @@
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
+            @include mobile{
+                font-size: 11px;
+            }
             .item{
                 a{
                     img{
@@ -116,14 +144,26 @@
         display: flex;
         justify-content: space-between;
         color: $--light-blue;
+        @include mobile{
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            margin-top: 10px;
+            gap: 20px;
+            
+        }
         @include teblet{
             display: flex;
-            flex-direction: column;gap: 10px;
+            justify-content: space-between;
+            
         }
         .copy{
             color: $--light-blue;
             font-size: 15px;
             font-weight: 600;
+            @include mobile{
+                font-size: 11px;
+            }
             a{}
         }
         .link-go{
@@ -132,6 +172,13 @@
             display: flex;
             gap: 20px;
             justify-content: flex-end;
+            @include teblet{
+                margin-right: 0;
+            }
+            @include mobile{
+                font-size: 11px;
+                justify-content: flex-start;
+            }
             a{
                 p{
                     border-bottom: 2px solid $--light-blue;

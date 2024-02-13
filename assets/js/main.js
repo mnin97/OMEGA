@@ -6,7 +6,25 @@ $(".header  .item").hover(function(){
     $(this).find(".sub-nav").removeClass("active")
 });
 
+$(".moblie-header .hambuger-btn").on("click", function () {
+    $(this).toggleClass("active");
+    $(".moblie-side-nav").toggleClass("on");
+});
 
+// Mobile navigation item click event
+$(".moblie-side-nav .item a").on("click", function (e) {
+    e.preventDefault();
+    var targetSection = $(this).attr("href");
+
+    // Smooth scroll to section function
+    $("html, body").animate({
+        scrollTop: $(targetSection).offset().top
+    }, 2000);
+
+    // Close the mobile navigation (optional)
+    $(".moblie-header .hambuger-btn").removeClass("active");
+    $(".moblie-side-nav").removeClass("on");
+});
 
 
 
@@ -222,12 +240,21 @@ const tl = gsap.timeline({
         slidesPerView: "1",
         speed: 1000,
         loop: true,
+        spaceBetween: 30,
         autoplay: {
-            delay: 3000 
+            delay: 3000
         },
         pagination: {
             el: ".visual6 .swiper-pagination",
         },
+        // breakpoints : { // 반응형 설정 가능 width값으로 조정
+        //     767 : {
+        //         slidesPerView : 1,
+        //         slidesPerGroup:1,
+        //         width:"1000px"
+        //     },
+        // },
+        
     });
 
 

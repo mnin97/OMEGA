@@ -1,37 +1,157 @@
 .moblie-header{
-    display: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 15px;
-    @include teblet{
-        display: flex;
-    }
+    color:#fff;
     .logo{
         display: inline-block;
         width: 75px;
-        height: auto;
     }
-    .menu{
-        display: flex;
-        align-items: center;
-        .hamburger-menu {
-            display: flex;
-            flex-direction: column;
+    @include desktop{
+        visibility: hidden;
+    }
+    @include teblet{
+        visibility: visible;
+        position: relative;
+        padding: 10px 0;
+        
+        .hambuger-btn{
+            margin-top: 15px;
+            width: 20px;
+            height: 15px;
             cursor: pointer;
-            .bar{
-                width: 35px;
-                height: 2px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            &.active{
+                z-index: 110;
+                &::before{
+                    transform: translate3d(0,2px,0) rotate(45deg);
+                }
+                &::after{
+                    transform: translate3d(0,-2px,0) rotate(-45deg);
+                }
+            }
+            &::before{
                 background-color: #fff;
-                margin: 4px 0;
+                content: "";
+                height: 1px;
+                top: 5px;
+                left: 0;
+                position: absolute;
+                transform: translateZ(0) rotate(0deg);
+                transform-origin: center center;
+                transition: transform .75s cubic-bezier(.645,.045,.355,1);
+                width: 18px;
+                cursor: pointer;
+            }
+            &::after{
+                cursor: pointer;
+                background-color: #fff;
+                content: "";
+                height: 1px;
+                left: 0;
+                top: 10px;
+                position: absolute;
+                transform: translateZ(0) rotate(0deg);
+                transform-origin: center center;
+                transition: transform .75s cubic-bezier(.645,.045,.355,1);
+                width: 18px;
             }
         }
-        .list{
-            display: none;
-            .item{}
-        }
+     
     }
+    @include mobile{
+        visibility: visible;
+        position: relative;
+        padding: 10px 0;
+        
+        .hambuger-btn{
+            margin-top: 15px;
+            width: 20px;
+            height: 15px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            &.active{
+                z-index: 110;
+                &::before{
+                    transform: translate3d(0,2px,0) rotate(45deg);
+                }
+                &::after{
+                    transform: translate3d(0,-2px,0) rotate(-45deg);
+                }
+            }
+            &::before{
+                background-color: #fff;
+                content: "";
+                height: 1px;
+                top: 5px;
+                left: 0;
+                position: absolute;
+                transform: translateZ(0) rotate(0deg);
+                transform-origin: center center;
+                transition: transform .75s cubic-bezier(.645,.045,.355,1);
+                width: 18px;
+                cursor: pointer;
+            }
+            &::after{
+                cursor: pointer;
+                background-color: #fff;
+                content: "";
+                height: 1px;
+                left: 0;
+                top: 10px;
+                position: absolute;
+                transform: translateZ(0) rotate(0deg);
+                transform-origin: center center;
+                transition: transform .75s cubic-bezier(.645,.045,.355,1);
+                width: 18px;
+            }
+        }
+     
+    }
+    .moblie-side-nav{
+        @include mobile{
+            display: flex;
+        }
+        @include teblet{
+            display: flex;
+        }
+        display: none;
+        justify-content: center;
+        align-items: center;
+        background-color:#000;
+        visibility: hidden;
+        overflow-y: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; 
+        font-size: 11px;
+        transform: translateY(-100%);
+        transition: all 0.5s ease;
+        z-index: 100;
+        &.on{
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .list{
+            display: flex;
+            gap: 30px;
+            flex-direction: column;
+            .item{
+                padding-bottom: 10px;
+                font-size: 50px;
+                text-transform: uppercase;
+                border-bottom: 2px solid #fff;
+                @include mobile{
+                    font-size: 22px;
+                }
+            }
+        }
+    }   
 }
 
 
@@ -83,6 +203,7 @@
                     position: relative;
                     white-space: nowrap;
                     transition: .1s;
+                
                     &:hover{
                         background: $--light-blue;
                         color: #000;
@@ -157,6 +278,9 @@
                     }
                 }
                 a{  
+                    @include desktop{
+                        font-size: 13px;
+                    }
                     position: relative;
                     overflow: hidden;
                     line-height: 34px;

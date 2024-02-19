@@ -1,7 +1,7 @@
 .moblie-header{
     color:#fff;
     .logo{
-        display: inline-block;
+        display: none;
         width: 75px;
     }
     @include desktop{
@@ -175,6 +175,9 @@
             transform: translateX(-50%);
             top: 150%;
             width: 38px;
+            @include mobile {
+                display: none;
+            }
             img{
                 }
             

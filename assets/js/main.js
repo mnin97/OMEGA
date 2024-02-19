@@ -9,8 +9,10 @@ $(".header  .item").hover(function(){
 $(".moblie-header .hambuger-btn").on("click", function () {
     $(this).toggleClass("active");
     $(".moblie-side-nav").toggleClass("on");
+    
+    // Toggle body overflow
+    $("body").toggleClass("no-scroll");
 });
-
 // Mobile navigation item click event
 $(".moblie-side-nav .item a").on("click", function (e) {
     e.preventDefault();

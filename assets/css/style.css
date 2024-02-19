@@ -120,6 +120,10 @@ body {
   min-height: 100%;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 .blind {
   position: absolute;
   width: 1px;

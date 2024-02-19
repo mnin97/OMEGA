@@ -71,7 +71,6 @@ const visual2IMG = gsap.from(".visual2 .img-box",{
         scrub:0
     },
     scale:0.7,
-    width:"60vw",
     height: "52vh",
 }) 
 

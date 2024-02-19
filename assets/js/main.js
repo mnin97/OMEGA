@@ -10,20 +10,19 @@ $(".moblie-header .hambuger-btn").on("click", function () {
     $(this).toggleClass("active");
     $(".moblie-side-nav").toggleClass("on");
     
-    // Toggle body overflow
     $("body").toggleClass("no-scroll");
 });
-// Mobile navigation item click event
+
 $(".moblie-side-nav .item a").on("click", function (e) {
     e.preventDefault();
     var targetSection = $(this).attr("href");
 
-    // Smooth scroll to section function
+
     $("html, body").animate({
         scrollTop: $(targetSection).offset().top
     }, 2000);
 
-    // Close the mobile navigation (optional)
+
     $(".moblie-header .hambuger-btn").removeClass("active");
     $(".moblie-side-nav").removeClass("on");
 });
@@ -113,12 +112,11 @@ gsap.set('[data-ani="textFade"]',{opacity:0.3})
 
 
 $('[data-ani="textParent"]').each(function(){
-    $child=$(this).find('[data-ani="textFade"]') //4 //2
+    $child=$(this).find('[data-ani="textFade"]') 
     $($child).each(function(i,el){
         gsap.to(el,{
             scrollTrigger:{
                 trigger:el,
-                // markers:true,
                 start:`${70*i}% 80%`,
                 end:"0% 0%",
             },    
@@ -134,7 +132,6 @@ $('[data-ani="fadeUp"]').each(function(i,el){
     gsap.from(el,{
         scrollTrigger:{
             trigger:el,
-            // markers:true,
             start:"top 90%",
             end:"0% 0%",
         },
@@ -154,40 +151,17 @@ ScrollTrigger.create({
 })
 
 
-// gsap.utils.toArray('.top-con .item').forEach((item) => {
-//     gsap.fromTo(item, {
-//         opacity: 0,
-//         y: 20, 
-//     }, {
-//         opacity: 1,
-//         y: 0,
-//         duration: 1,
-//         scrollTrigger: {
-//             trigger: item,
-//             start: 'top 80%', 
-//             end: 'bottom 20%',
-//             toggleActions: 'play none none reverse',
-//         },
-//     });
-// });
-
-
 
 const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: ".visual5 .bottom", // Set the trigger element
-      start: "top 80%", // Adjust the start position based on your needs
-      end: "bottom 20%", // Adjust the end position based on your needs
+      trigger: ".visual5 .bottom",
+      start: "top 80%", 
+      end: "bottom 20%",
       toggleActions: "play none none reverse",
-    //   markers: true,
     },
   });
   
-  // Add animations to the timeline
-  tl
-//   .to(".visual5 .bottom .title", { opacity: 1, y: 0, duration: 0.3 })
-    // .to(".visual5 .bottom .desc", { opacity: 1, y: 0, duration: 0.5 }, "+=0.5")
-    .to(".visual5 .bottom .list .main-item", {
+  tl.to(".visual5 .bottom .list .main-item", {
         opacity: 1,
         y: 0,
         duration: 0.7,
@@ -206,21 +180,11 @@ const tl = gsap.timeline({
         pagination: {
             el: ".visual6 .swiper-pagination",
         },
-        // breakpoints : { // 반응형 설정 가능 width값으로 조정
-        //     767 : {
-        //         slidesPerView : 1,
-        //         slidesPerGroup:1,
-        //         width:"1000px"
-        //     },
-        // },
-        
     });
 
 
        gsap.set('.visual8 .circle',{scale:0.5,opacity:0,})
        $('.visual8').mousemove(function(e){
-        // console.log(+'//'+);
-        
         gsap.to('.visual8 .circle',{
             x:e.offsetX-window.innerWidth/2,
             y:(e.offsetY-$('.visual8').outerHeight()/2)/3,

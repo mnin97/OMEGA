@@ -2039,6 +2039,14 @@ body {
           transform: translate(-50%, -50%);
   pointer-events: none;
 }
+.visual8 a .circle img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 50%;
+}
 @media (max-width: 767px) {
   .visual8 a .circle {
     width: 75px;

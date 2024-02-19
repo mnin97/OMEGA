@@ -67,55 +67,14 @@ const visual2IMG = gsap.from(".visual2 .img-box",{
         trigger:".visual2",
         start:"top 90%",
         end:"100% 70%",
-        // endTrigger:".visual3",
-        // end:"100% 100%",
-        // markers:true,
         scrub:0
     },
-    // scale:0.7
+    scale:0.7,
     width:"60vw",
     height: "52vh",
 }) 
 
 
-
-// const visual3 = gsap.to(".visual3 .inner .top .title",{
-//     scrollTrigger:{
-//         trigger:".visual3",
-//         markers:false,
-//         start:"top 100%",
-//         end:"100% 0%",
-//     },
-//     opacity:1,
-//     yPercent: -10,
-//     stagger:1,
-// })
-
-
-
-
-
-// const visual3Desc = gsap.to(".visual3 .inner .top .desc",{
-//     scrollTrigger:{
-//         trigger:".visual3",
-//         markers:false,
-//         start:"top 80%",
-//         end:"0% 0%",
-//     },    
-//     opacity:1,    
-//     stagger:0.2,
-// })
-
-// const numberSection = gsap.to(".visual3 .number-section .item",{
-//     scrollTrigger:{
-//         trigger:".visual3 .number-section",
-//         markers:false,
-//         start:"top 90%",
-//         end:"0% 100%"
-//     },
-//     opacity:1,
-//     stagger:0.2,
-// })
 
 gsap.to('.visual4 .scroll-slider .item .wrap',20,{
     xPercent:-100,
@@ -150,8 +109,6 @@ const ScrollSlider = $(".visual4 .scroll-slider").each(function(index) {
 
 gsap.set('[data-ani="textFade"]',{opacity:0.3}) 
 
-// each 부모 두마리
-// each 자식들
 
 $('[data-ani="textParent"]').each(function(){
     $child=$(this).find('[data-ani="textFade"]') //4 //2

@@ -175,6 +175,9 @@
             transform: translateX(-50%);
             top: 150%;
             width: 38px;
+            svg{
+                fill: #fff;
+            }
             @include mobile {
                 display: none;
             }
@@ -185,11 +188,12 @@
     
     .header-nav{
         display: flex;
+        justify-content: space-between;
         @include teblet{
             
         }
         .nav-list{
-            flex: 1;
+            display: flex;
                 .contact-item {
                     a{
                     display: flex;

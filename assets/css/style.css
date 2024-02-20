@@ -384,6 +384,9 @@ body.no-scroll {
   top: 150%;
   width: 38px;
 }
+.header .logo svg {
+  fill: #fff;
+}
 @media (max-width: 767px) {
   .header .logo {
     display: none;
@@ -393,11 +396,14 @@ body.no-scroll {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .header .header-nav .nav-list {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .header .header-nav .nav-list .contact-item a {
   display: -webkit-box;

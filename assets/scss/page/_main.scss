@@ -33,6 +33,7 @@
             display: flex;
             justify-content: center;
             gap: 10px;
+            color: $--light-blue;
             .join{
                 text-align: center;
                 width: 224px;
@@ -543,7 +544,6 @@
     max-width: 1200px;
     margin: 0 auto;
     background-color: $--bg-color;
-    margin-top: 150px;
     margin-bottom: 150px;
     @include teblet{
         padding: 0 38px;
@@ -557,23 +557,9 @@
     @include mobile{
         padding: 30px;
     }
-    .title{
-        // opacity: 0;
-        display: inline-block;
-        margin-bottom: 30px;
-        background-color: $--light-blue;
-        border-width: 2px;
-        border-color: #c7c3cf;
-        border-radius: 30px;
-        padding: 10px 20px;
-        font-size: 13px;
-        font-weight: 900;
-        line-height: 1.1;
-        @include mobile{
-            font-size: 10px;
-        }
-    }
+
     .desc{
+        text-align: center;
         // opacity: 0;
         text-transform: uppercase;
         color: $--light-blue;
@@ -589,7 +575,7 @@
         margin-top: 60px;
         display: grid;
         grid-template-columns: repeat(3,1fr);
-        gap: 50px;
+        
         @include desktop{
             display: flex;
             flex-direction: column;
@@ -601,6 +587,7 @@
         }
         .main-item{
             opacity: 1;
+            text-align: center;
             .item-title{
                 text-transform: uppercase;
                 margin: 30px 0;
@@ -649,7 +636,7 @@
                         width: 200px;
                         height: 200px;
                         opacity: 1;
-                        rotate: 20deg;
+                        rotate: 5deg;
                         position: absolute;
                         top: 50%;
                         right: 0;
@@ -855,6 +842,7 @@
 .visual7{
     background-color: $--bg-color;
     padding: 150px 5%;
+    overflow: hidden;
     @include mobile{
         padding: 100px 30px;
     }
@@ -886,6 +874,7 @@
         display: flex;
         justify-content: center;
         gap: 50px;
+        overflow: hidden;
         @include desktop{
             display: flex;
             flex-direction: column;
@@ -907,6 +896,8 @@
         }
         .item{
             position: relative;
+            flex: 1;
+
             &::after{
                 position: absolute;
                 top: 0;
